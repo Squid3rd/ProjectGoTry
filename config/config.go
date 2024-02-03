@@ -103,8 +103,8 @@ func LoadConfig(path string) Config {
 			PaymentUrl:   os.Getenv("GRPC_PAYMENT_URL"),
 		},
 		Paginate: Paginate{
-			ItemNextPageBasedUrl:      os.Getenv("PAGINATE_ITEM_NEW_PAGE_BASED_URL"),
-			InventoryNextPageBasedUrl: os.Getenv("PAGINATE_INVENTORY_NEW_PAGE_BASED_URL"),
+			ItemNextPageBasedUrl:      os.Getenv("PAGINATE_ITEM_NEXT_PAGE_BASED_URL"),
+			InventoryNextPageBasedUrl: os.Getenv("PAGINATE_INVENTORY_NEXT_PAGE_BASED_URL"),
 		},
 	}
 }
