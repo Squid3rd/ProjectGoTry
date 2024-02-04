@@ -6,11 +6,11 @@ import (
 	"os"
 
 	"github.com/Squid3rd/FirstGoProject/config"
+	"github.com/Squid3rd/FirstGoProject/pkg/database"
 )
 
 func main() {
 	ctx := context.Background()
-	_ = ctx
 
 	// Initial Config
 	cfg := config.LoadConfig(func() string {
@@ -21,6 +21,12 @@ func main() {
 
 		return os.Args[1]
 	}())
+
+	// Connect to DB
+	db := database.DbConn(ctx, &cfg)
+	defer db.Disconnect(ctx)
+
+	log.Println(db)
 
 	log.Println(cfg)
 }
